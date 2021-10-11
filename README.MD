@@ -8,4 +8,5 @@ Este es el primer proyecto en el que se comenzó un acercamiento al almacenamien
 En este proyecto ya se comennzó a trabajar con una base de datos SQLite. Los datos en este proyecto se modifican directamente en la tabla que los muestra al usuario.
 ## DB2
 Para este caso se realizó un CRUD, en el que para modificar, eliminar o añadir datos se trabajó con un formulario, ya no directamente con los datos en la tabla. Estos tres primeros proyectos tuvieron el objetivo de ayudarme a entender el manejo de datos en los programas desarrollados con PySide6.
-
+## KANBAN
+En este proyecto se desarrolló un tableto Kanban para gestionar tareas, dandole persistencia a las tareas que el usuario crea con la ayuda de un fichero CSV.
