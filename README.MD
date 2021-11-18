@@ -10,3 +10,6 @@ En este proyecto ya se comennzó a trabajar con una base de datos SQLite. Los da
 Para este caso se realizó un CRUD, en el que para modificar, eliminar o añadir datos se trabajó con un formulario, ya no directamente con los datos en la tabla. Estos tres primeros proyectos tuvieron el objetivo de ayudarme a entender el manejo de datos en los programas desarrollados con PySide6.
 ## KANBAN
 En este proyecto se desarrolló un tableto Kanban para gestionar tareas, dandole persistencia a las tareas que el usuario crea con la ayuda de un fichero CSV.
+## CALCULADORA
+Este proyecto consta de el desarrollo de una calculadora con una interfaz generada dinámicamente (es decir, sin utilizar QtDesigner) a partir de una matriz con los caracteres que se mostrarán en los en los botones.
+
