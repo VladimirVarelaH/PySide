@@ -1,5 +1,5 @@
 # Sobre el proyecto
-
+Para ejecutar los programas se debe ejecutar el archivo programa.py de cada carpeta.
 Con estos programas busco aprender a utilizar la libreria de PySide para desarrollar aplicaciones de escritorio, misntras sigo el curso de Hector Costa Martin en Udemy. Los proyectos de este repositorio son:
 
 ## JSON
