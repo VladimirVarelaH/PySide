@@ -12,4 +12,5 @@ Para este caso se realizó un CRUD, en el que para modificar, eliminar o añadir
 En este proyecto se desarrolló un tableto Kanban para gestionar tareas, dandole persistencia a las tareas que el usuario crea con la ayuda de un fichero CSV.
 ## CALCULADORA
 Este proyecto consta de el desarrollo de una calculadora con una interfaz generada dinámicamente (es decir, sin utilizar QtDesigner) a partir de una matriz con los caracteres que se mostrarán en los en los botones.
-
+## GRAFICACIÓN DE DATOS
+Para desarrollar este proyecto se utilizó la librería de [`pyqtgraph`](https://www.pyqtgraph.org/), que se utilizará para mostrar en pantalla los datos introducidos por el usuario.
