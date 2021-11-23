@@ -22,10 +22,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if existsFile(absPath("tareas.csv")):
             with open(absPath("tareas.csv"), newline="\n") as csvfile:
                 reader = csv.reader(csvfile, delimiter=",")
-                for lista, nombre in reader:
-                    item = QListWidgetItem(nombre)
-                    item.setTextAlignment(Qt.AlignCenter)
-                    self.listas[int(lista)].addItem(item)
+                for i in reader:
+                    if i:
+                        item = QListWidgetItem(i[1]) 
+                        item.setTextAlignment(Qt.AlignCenter)
+                        self.listas[int(i[0])].addItem(item)
+
 
 
     def eventFilter(self, source, event):
@@ -34,7 +36,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             # creamos un menu conextual sobre el item
             menu = QMenu()
             #Se crean las opciones del menu con sus funciones
-            menu.addAction("Testing", lambda: self.testing(item))
             menu.addAction("Añadir Tarea", self.addTask)
             menu.addAction("Eliminar Tarea", lambda: self.deleteTask(item))
             menu.addAction("Avanzar Estado", lambda: self.updateTaskState(item))
@@ -49,12 +50,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
     #_____ METHODS ________#
-
-    def testing(self, item): 
-        #Comprueba si el item señeccionado es un elemento de la lista
-        if type(item) == QListWidgetItem:
-            print(item.text())
-    
     def addTask(self):
         tarea, _ = QInputDialog().getText(self, "Tareas", "¿Nombre de la tarea")
         if tarea:
@@ -67,7 +62,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if type(item) == QListWidgetItem:
             index = item.listWidget().row(item)
             item.listWidget().takeItem(index)
-            print("eliminando",item.text(), "de la fila", index)
 
     def updateTaskState(self, item):
         #Comprueba si el item señeccionado es un elemento de la lista
@@ -103,10 +97,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         for i, lista in enumerate(self.listas):
             for j in range(lista.count()):
                 tareas.append([i, lista.item(j).text()])
-                print(tareas)
         with open(absPath("tareas.csv"), "w") as CSVfile:
             writer = csv.writer(CSVfile, delimiter=",")
-            
             writer.writerows(tareas)
         
         event.accept()
